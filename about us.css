@@ -1,0 +1,317 @@
+@charset "utf-8";
+@font-face{
+	font-family: f1;
+	src: url("font/Vazirmatn-Bold.ttf");
+}
+/* تنظیمات پایه و متغیرها */
+    @charset "utf-8";
+    :root {
+      --primary: #1e3c72;
+      --secondary: #00cec9;
+      --accent: #0984e3;
+      --light: #f8f9fa;
+      --dark: #2d3436;
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      //font-family: 'Vazirmatn', sans-serif;
+		font-family: f1;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    
+    /* هدر */
+    header {
+      background: linear-gradient(135deg, var(--primary), #2a5298);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+    }
+    nav {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+    .logo {
+      color: #dfe6e9;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 40px;
+    }
+    nav ul li a {
+      color: #dfe6e9;
+      font-size: 18px;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    nav ul li a:hover {
+      color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    /* بخش هیرو درباره ما */
+    .hero-about {
+      height: 60vh;
+      background: linear-gradient(135deg, var(--primary) 0%, #2a5298 60%, var(--accent) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-top: 80px;
+      color: #fff;
+      padding: 0 20px;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero-about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('img/poster 0 (2).png') no-repeat center/cover;
+      opacity: 0.2;
+      z-index: 0;
+    }
+    .hero-about h1 {
+      font-size: 48px;
+      z-index: 1;
+      margin-bottom: 10px;
+      animation: bounceIn 1.5s ease-out;
+    }
+    .hero-about p {
+      font-size: 20px;
+      z-index: 1;
+      animation: fadeInUp 2s ease-out;
+    }
+    
+    /* بخش معرفی */
+    .about-intro {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-intro h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .about-intro h2::after {
+    content: '';
+  position: absolute;
+  width: 40%; /* این مقدار را تغییر دهید */
+  height: 4px;
+  background: var(--secondary);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+
+}
+
+    .about-intro p {
+      font-size: 18px;
+      color: var(--dark);
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+    
+    /* بخش ارزش‌ها / ماموریت */
+    .about-values {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .value-item {
+      flex: 1 1 250px;
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .value-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .value-item i {
+      font-size: 40px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .value-item h3 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .value-item p {
+      font-size: 16px;
+      color: var(--dark);
+    }
+    
+    /* بخش تیم */
+    .about-team {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-team h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .about-team h2::after {
+    content: '';
+  position: absolute;
+  width: 15%; /* این مقدار را تغییر دهید */
+  height: 4px;
+  background: var(--secondary);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+
+}
+
+
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .team-card {
+      background: var(--light);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .team-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .team-card h3 {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .team-card p {
+      font-size: 16px;
+      color: var(--dark);
+    }
+    
+    /* فوتر */
+    footer {
+      background: linear-gradient(135deg, var(--primary), #2a5298);
+      color: #dfe6e9;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+    }
+    footer p { font-size: 16px; }
+    
+    /* انیمیشن‌ها */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* ریسپانسیو */
+    @media (max-width: 1024px) {
+      .hero-about h1 { font-size: 36px; }
+      .hero-about p { font-size: 18px; }
+      .about-team h2, .about-intro h2 { font-size: 32px; }
+    }
+    @media (max-width: 768px) {
+      nav { flex-direction: column; padding: 10px 20px; }
+      nav ul { flex-direction: column; align-items: center; }
+      nav ul li { margin: 10px 0; }
+      .hero-about { height: 50vh; }
+    }
+    @media (max-width: 480px) {
+      .hero-about h1 { font-size: 28px; }
+      .hero-about p { font-size: 16px; }
+      .about-intro h2, .about-team h2 { font-size: 24px; }
+      .value-item h3 { font-size: 20px; }
+    }
